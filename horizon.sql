@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2021 at 07:41 AM
+-- Generation Time: Apr 04, 2021 at 06:13 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -34,13 +34,6 @@ CREATE TABLE `audio_post` (
   `about` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `audio_post`
---
-
-INSERT INTO `audio_post` (`audio_post_Id`, `post_id`, `audio`, `about`) VALUES
-(3, 48, 'Abhay Singh Room(00917030080251)_20201103210236.mp3', 'hey there , listen it\n');
-
 -- --------------------------------------------------------
 
 --
@@ -67,15 +60,6 @@ CREATE TABLE `bookmarks` (
   `bookmark_time` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `bookmarks`
---
-
-INSERT INTO `bookmarks` (`bkmrk_id`, `post_id`, `user_id`, `bookmark_time`) VALUES
-(5, 11, 139, '2017-07-30 01:14:40'),
-(7, 10, 139, '2017-07-30 01:37:57'),
-(9, 54, 252, '2021-03-27 22:59:23');
-
 -- --------------------------------------------------------
 
 --
@@ -94,10 +78,7 @@ CREATE TABLE `comment_likes` (
 --
 
 INSERT INTO `comment_likes` (`comment_like_id`, `like_by`, `comment_id`, `time`) VALUES
-(4, 139, 5, '2017-07-30 00:51:34'),
-(6, 250, 8, '2021-03-26 14:47:38'),
-(7, 250, 14, '2021-03-27 23:46:52'),
-(8, 250, 37, '2021-04-04 10:38:36');
+(7, 250, 14, '2021-03-27 23:46:52');
 
 -- --------------------------------------------------------
 
@@ -287,14 +268,14 @@ INSERT INTO `follow_system` (`follow_id`, `follow_by`, `follow_by_u`, `follow_to
 (47, 250, 'Indiana', 196, 'draco', '2021-03-09 14:30:18'),
 (51, 250, 'Indiana', 171, 'kumarVishwas', '2021-03-09 14:30:22'),
 (52, 251, 'abcde', 250, 'Indiana', '2021-03-09 14:44:54'),
-(55, 252, 'abcder', 199, 'hagrid', '2021-03-25 23:00:56'),
-(57, 253, 'avi', 252, 'abcder', '2021-03-26 12:42:19'),
+(55, 252, 'Mr_atre', 199, 'hagrid', '2021-03-25 23:00:56'),
+(57, 253, 'avi', 252, 'Mr_atre', '2021-03-26 12:42:19'),
 (59, 253, 'avi', 187, 'harmoine', '2021-03-26 12:42:49'),
 (60, 253, 'avi', 177, 'johnny', '2021-03-26 12:42:50'),
-(62, 252, 'abcder', 253, 'avi', '2021-03-26 17:36:07'),
-(63, 252, 'abcder', 250, 'Indiana', '2021-03-26 17:36:19'),
+(62, 252, 'Mr_atre', 253, 'avi', '2021-03-26 17:36:07'),
+(63, 252, 'Mr_atre', 250, 'Indiana', '2021-03-26 17:36:19'),
 (65, 250, 'Indiana', 144, 'ghalib', '2021-03-27 11:00:40'),
-(66, 250, 'Indiana', 252, 'abcder', '2021-03-27 11:04:36'),
+(66, 250, 'Indiana', 252, 'Mr_atre', '2021-03-27 11:04:36'),
 (67, 250, 'Indiana', 139, 'MrMohite', '2021-04-02 10:40:48');
 
 -- --------------------------------------------------------
@@ -318,9 +299,6 @@ CREATE TABLE `groups` (
 --
 
 INSERT INTO `groups` (`group_id`, `grp_name`, `grp_bio`, `grp_avatar`, `grp_admin`, `grp_privacy`, `grp_time`) VALUES
-(3, 'Hello', 'India and the world!!', '1501356405.jpg', 139, 'private', '2017-07-30 00:56:39'),
-(4, 'Hello', 'Bio of group!!', '1501357704.jpg', 139, 'public', '2017-07-30 01:17:33'),
-(5, 'Hello', 'ww', '1501359072.jpg', 139, 'public', '2017-07-30 01:41:04'),
 (6, 'avishkar mohite', 'jgjarhg fjavid jdkfdkvj cv9eo fvf bifhvifhvrea vevhfeivaejvodv asfj adjf adsjvidas cdsjvdanvdjv daovkafkv a jvjfvoai iaj aoiv aopbjfdob po fjaj anojifvfjaijvare ovjavpav vjakdvj kvjodvi k k asjdaosjvfd dovjaovjaivnajaivaduaihaj9u490u9r', '', 250, 'public', '2021-03-26 16:05:47'),
 (7, 'avishkar mohite', 'jgjarhg fjavid jdkfdkvj cv9eo fvf bifhvifhvrea vevhfeivaejvodv asfj adjf adsjvidas cdsjvdanvdjv daovkafkv a jvjfvoai iaj aoiv aopbjfdob po fjaj anojifvfjaijvare ovjavpav vjakdvj kvjodvi k k asjdaosjvfd dovjaovjaivnajaivaduaihaj9u490u9r', '', 250, 'public', '2021-03-26 16:05:47');
 
@@ -389,16 +367,6 @@ CREATE TABLE `group_members` (
 --
 
 INSERT INTO `group_members` (`group_mem_id`, `group_id`, `group_member`, `added_by`, `time`) VALUES
-(7, 3, 139, 139, '2017-07-30 00:56:39'),
-(10, 3, 143, 139, '2017-07-30 00:56:53'),
-(11, 3, 144, 144, '2017-07-30 01:01:35'),
-(12, 4, 139, 139, '2017-07-30 01:17:33'),
-(13, 4, 144, 139, '2017-07-30 01:17:39'),
-(15, 4, 143, 139, '2017-07-30 01:17:43'),
-(16, 5, 139, 139, '2017-07-30 01:41:04'),
-(17, 5, 144, 139, '2017-07-30 01:41:16'),
-(18, 5, 224, 139, '2017-07-30 01:41:18'),
-(19, 5, 143, 139, '2017-07-30 01:41:21'),
 (20, 6, 250, 250, '2021-03-26 16:05:47'),
 (21, 7, 250, 250, '2021-03-26 16:05:47'),
 (22, 6, 252, 252, '2021-03-26 17:39:46');
@@ -508,8 +476,7 @@ CREATE TABLE `hashtag` (
 
 INSERT INTO `hashtag` (`hashtag_id`, `hashtag`, `src`, `post_id`, `comment_id`, `user_id`, `time`) VALUES
 (7, '#corruption', 'post', 58, 0, 139, '2021-04-02 10:38:27'),
-(8, '#roads', 'post', 58, 0, 139, '2021-04-02 10:38:27'),
-(9, '#shameondemocracy', 'post', 59, 0, 250, '2021-04-04 10:10:33');
+(8, '#roads', 'post', 58, 0, 139, '2021-04-02 10:38:27');
 
 -- --------------------------------------------------------
 
@@ -531,14 +498,6 @@ CREATE TABLE `image_post` (
 
 INSERT INTO `image_post` (`image_post_id`, `post_id`, `image`, `about`, `filter`) VALUES
 (4, 9, '1499101610.jpg', '', ''),
-(5, 11, '1501356005.png', '', ''),
-(6, 17, '1501356770.jpg', '', ''),
-(9, 32, '1615280525.jpeg', 'what is happening there must not be entertained , this is against the rule #mohite1', ''),
-(12, 36, '1616760291.jpeg', '', 'hue-rotate'),
-(13, 37, '1616760306.jpg', '', 'hue-rotate'),
-(14, 38, '1616760317.jpg', '', ''),
-(15, 39, '1616760327.jpg', '', ''),
-(17, 56, '1617115833.png', 'nothing , just usual\n😴😴😴😴', ''),
 (18, 58, '1617340107.jpg', 'This road was built in january  2020 last year . After only one heavy rainfall , see it . Is this what we call developed India . Is this how taxpayer\'s money is used . Why we don\'t even have good roads here. #corruption #roads', '');
 
 -- --------------------------------------------------------
@@ -582,14 +541,6 @@ CREATE TABLE `loc_post` (
   `loc` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `about` longtext COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `loc_post`
---
-
-INSERT INTO `loc_post` (`loc_post_id`, `post_id`, `loc`, `about`) VALUES
-(4, 53, 'https://maps.googleapis.com/maps/api/staticmap?zoom=13&size=500x400&scale=2&maptype=roadmap&markers=color:red%7Clabel:S%7C19.7514798,75.7138884&key=AIzaSyDOPJdgCIHzaQ4VH0w8ngbRUtf2oBu2Y5c', 'cxwefcfcfw'),
-(5, 57, 'https://maps.googleapis.com/maps/api/staticmap?zoom=13&size=500x400&scale=2&maptype=roadmap&markers=color:red%7Clabel:S%7C19.7514798,75.7138884&key=AIzaSyDOPJdgCIHzaQ4VH0w8ngbRUtf2oBu2Y5c', 'this is new location');
 
 -- --------------------------------------------------------
 
@@ -693,7 +644,17 @@ INSERT INTO `login` (`login_id`, `user_id`, `ip`, `time`, `os`, `browser`, `logo
 (79, 139, '1', '2021-04-04 08:08:35', 'Windows 10', 'Chrome', '0000-00-00 00:00:00'),
 (80, 139, '1', '2021-04-04 09:56:41', 'Windows 10', 'Chrome', '2021-04-04 09:56:54'),
 (81, 250, '1', '2021-04-04 09:56:59', 'Windows 10', 'Chrome', '0000-00-00 00:00:00'),
-(82, 252, '1', '2021-04-04 09:59:41', 'Windows 10', 'Chrome', '2021-04-04 10:01:03');
+(82, 252, '1', '2021-04-04 09:59:41', 'Windows 10', 'Chrome', '2021-04-04 10:01:03'),
+(83, 139, '1', '2021-04-04 14:35:05', 'Windows 10', 'Chrome', '2021-04-04 15:29:31'),
+(84, 252, '1', '2021-04-04 15:29:49', 'Windows 10', 'Chrome', '2021-04-04 15:30:01'),
+(85, 250, '1', '2021-04-04 15:30:06', 'Windows 10', 'Chrome', '2021-04-04 15:32:28'),
+(86, 144, '1', '2021-04-04 15:33:32', 'Windows 10', 'Chrome', '2021-04-04 15:35:11'),
+(87, 139, '1', '2021-04-04 15:35:17', 'Windows 10', 'Chrome', '2021-04-04 15:46:36'),
+(88, 252, '1', '2021-04-04 15:46:42', 'Windows 10', 'Chrome', '2021-04-04 16:07:36'),
+(89, 252, '1', '2021-04-04 16:18:35', 'Windows 10', 'Chrome', '2021-04-04 16:19:28'),
+(90, 192, '1', '2021-04-04 16:19:34', 'Windows 10', 'Chrome', '2021-04-04 16:20:41'),
+(91, 192, '1', '2021-04-04 16:26:06', 'Windows 10', 'Chrome', '2021-04-04 16:27:43'),
+(92, 139, '1', '2021-04-04 19:00:17', 'Windows 10', 'Chrome', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -897,13 +858,9 @@ INSERT INTO `notifications` (`noti_id`, `notify_by`, `type`, `notify_to`, `notif
 (31, 227, 'follow', 145, 0, 0, 0, '2017-07-03 21:18:39', 'unread'),
 (32, 227, 'follow', 154, 0, 0, 0, '2017-07-03 21:18:40', 'unread'),
 (33, 227, 'follow', 140, 0, 0, 0, '2017-07-03 21:18:45', 'unread'),
-(44, 139, 'shareto', 166, 0, 11, 0, '2017-07-30 00:51:38', 'unread'),
 (61, 139, 'grp_add', 224, 0, 3, 0, '2017-07-30 00:56:51', 'unread'),
 (62, 139, 'grp_add', 143, 0, 3, 0, '2017-07-30 00:56:54', 'unread'),
 (70, 139, 'follow', 206, 0, 0, 0, '2017-07-30 01:05:29', 'unread'),
-(72, 139, 'like', 144, 0, 11, 0, '2017-07-30 01:14:39', 'read'),
-(73, 139, 'shareto', 187, 0, 11, 0, '2017-07-30 01:14:45', 'read'),
-(74, 139, 'shareyour', 144, 0, 11, 0, '2017-07-30 01:14:45', 'read'),
 (77, 139, 'follow', 151, 0, 0, 0, '2017-07-30 01:16:39', 'unread'),
 (78, 139, 'follow', 186, 0, 0, 0, '2017-07-30 01:16:41', 'unread'),
 (79, 139, 'grp_add', 144, 0, 4, 0, '2017-07-30 01:17:39', 'read'),
@@ -911,9 +868,6 @@ INSERT INTO `notifications` (`noti_id`, `notify_by`, `type`, `notify_to`, `notif
 (81, 139, 'grp_add', 143, 0, 4, 0, '2017-07-30 01:17:43', 'unread'),
 (82, 139, 'recommend', 144, 187, 0, 0, '2017-07-30 01:19:56', 'read'),
 (87, 144, 'follow', 142, 0, 0, 0, '2017-07-30 01:20:52', 'unread'),
-(88, 139, 'like', 144, 0, 11, 0, '2017-07-30 01:37:55', 'read'),
-(89, 139, 'shareto', 227, 0, 11, 0, '2017-07-30 01:38:00', 'unread'),
-(90, 139, 'shareyour', 144, 0, 11, 0, '2017-07-30 01:38:00', 'read'),
 (95, 139, 'recommend', 187, 144, 0, 0, '2017-07-30 01:40:44', 'read'),
 (99, 144, 'follow', 187, 0, 0, 0, '2017-07-30 01:43:03', 'unread'),
 (101, 139, 'follow', 144, 0, 0, 0, '2017-07-30 03:47:15', 'read'),
@@ -930,9 +884,7 @@ INSERT INTO `notifications` (`noti_id`, `notify_by`, `type`, `notify_to`, `notif
 (122, 250, 'follow', 227, 0, 0, 0, '2021-03-09 14:30:20', 'unread'),
 (123, 250, 'follow', 168, 0, 0, 0, '2021-03-09 14:30:21', 'unread'),
 (124, 250, 'follow', 171, 0, 0, 0, '2021-03-09 14:30:22', 'unread'),
-(125, 250, 'shareto', 171, 0, 32, 0, '2021-03-09 14:32:42', 'unread'),
 (126, 251, 'follow', 250, 0, 0, 0, '2021-03-09 14:44:54', 'read'),
-(127, 252, 'like', 250, 0, 32, 0, '2021-03-25 22:56:59', 'read'),
 (128, 252, 'follow', 191, 0, 0, 0, '2021-03-25 23:00:54', 'unread'),
 (129, 252, 'follow', 153, 0, 0, 0, '2021-03-25 23:00:54', 'unread'),
 (130, 252, 'follow', 199, 0, 0, 0, '2021-03-25 23:00:56', 'unread'),
@@ -944,24 +896,14 @@ INSERT INTO `notifications` (`noti_id`, `notify_by`, `type`, `notify_to`, `notif
 (136, 253, 'follow', 189, 0, 0, 0, '2021-03-26 12:42:50', 'unread'),
 (137, 252, 'follow', 253, 0, 0, 0, '2021-03-26 17:36:07', 'unread'),
 (138, 252, 'follow', 250, 0, 0, 0, '2021-03-26 17:36:19', 'read'),
-(139, 252, 'like', 250, 0, 31, 0, '2021-03-26 22:57:24', 'read'),
 (140, 250, 'follow', 252, 0, 0, 0, '2021-03-26 22:58:44', 'read'),
 (141, 250, 'follow', 144, 0, 0, 0, '2021-03-27 11:00:40', 'unread'),
 (142, 250, 'follow', 252, 0, 0, 0, '2021-03-27 11:04:36', 'read'),
-(146, 252, 'comment', 250, 0, 47, 0, '2021-03-27 12:42:53', 'read'),
-(147, 252, 'comment', 250, 0, 47, 0, '2021-03-27 12:42:59', 'read'),
-(148, 252, 'comment', 250, 0, 47, 0, '2021-03-27 12:43:08', 'read'),
-(149, 252, 'like', 250, 0, 54, 0, '2021-03-27 14:51:45', 'read'),
 (150, 252, 'like', 149, 0, 9, 0, '2021-03-27 15:14:35', 'unread'),
 (151, 252, 'like', 149, 0, 9, 0, '2021-03-27 15:14:41', 'unread'),
 (152, 252, 'like', 149, 0, 9, 0, '2021-03-27 15:22:34', 'unread'),
 (155, 250, 'comment', 149, 0, 9, 0, '2021-03-27 23:46:42', 'unread'),
 (156, 250, 'like', 149, 0, 9, 0, '2021-03-28 09:47:39', 'unread'),
-(157, 250, 'like', 144, 0, 11, 0, '2021-03-28 14:49:28', 'unread'),
-(158, 250, 'like', 144, 0, 11, 0, '2021-03-28 14:49:28', 'unread'),
-(159, 250, 'like', 144, 0, 11, 0, '2021-03-28 14:49:28', 'unread'),
-(160, 250, 'like', 144, 0, 11, 0, '2021-03-28 14:49:28', 'unread'),
-(161, 250, 'like', 144, 0, 11, 0, '2021-03-28 14:49:28', 'unread'),
 (169, 250, 'follow', 139, 0, 0, 0, '2021-04-02 10:40:48', 'read'),
 (170, 250, 'comment', 139, 0, 58, 0, '2021-04-02 10:42:16', 'read'),
 (171, 250, 'comment', 139, 0, 58, 0, '2021-04-02 10:42:52', 'read'),
@@ -974,10 +916,8 @@ INSERT INTO `notifications` (`noti_id`, `notify_by`, `type`, `notify_to`, `notif
 (178, 139, 'like', 149, 0, 9, 0, '2021-04-03 13:32:25', 'unread'),
 (179, 250, 'comment', 139, 0, 58, 0, '2021-04-03 14:18:04', 'read'),
 (180, 250, 'comment', 139, 0, 58, 0, '2021-04-03 14:39:15', 'read'),
-(181, 250, 'comment', 139, 0, 58, 0, '2021-04-04 09:57:23', 'unread'),
-(182, 252, 'comment', 139, 0, 58, 0, '2021-04-04 10:00:37', 'unread'),
-(183, 254, 'comment', 250, 0, 59, 0, '2021-04-04 10:12:29', 'read'),
-(184, 250, 'commentLike', 254, 0, 59, 37, '2021-04-04 10:38:36', 'unread');
+(181, 250, 'comment', 139, 0, 58, 0, '2021-04-04 09:57:23', 'read'),
+(182, 252, 'comment', 139, 0, 58, 0, '2021-04-04 10:00:37', 'read');
 
 -- --------------------------------------------------------
 
@@ -1002,25 +942,7 @@ CREATE TABLE `post` (
 
 INSERT INTO `post` (`post_id`, `user_id`, `type`, `post_of`, `grp_id`, `time`, `font_size`, `address`) VALUES
 (9, 149, 'image', 'user', 0, '2017-07-03 22:36:50', '14', ''),
-(10, 144, 'text', 'user', 0, '2017-07-30 00:49:38', '19', 'Shammi Nagar, Dharavi, Mumbai'),
-(11, 144, 'image', 'user', 0, '2017-07-30 00:50:05', '14', 'Shammi Nagar, Dharavi, Mumbai'),
-(16, 139, 'text', 'group', 3, '2017-07-30 01:02:37', '14', ''),
-(17, 139, 'image', 'group', 3, '2017-07-30 01:02:50', '14', ''),
-(31, 250, 'text', 'user', 0, '2021-03-09 14:31:11', '14', ''),
-(32, 250, 'image', 'user', 0, '2021-03-09 14:32:05', '14', ''),
-(36, 250, 'image', 'user', 0, '2021-03-26 17:34:51', '14', ''),
-(37, 250, 'image', 'user', 0, '2021-03-26 17:35:06', '14', ''),
-(38, 250, 'image', 'user', 0, '2021-03-26 17:35:17', '14', ''),
-(39, 250, 'image', 'user', 0, '2021-03-26 17:35:27', '14', ''),
-(46, 250, 'text', 'user', 0, '2021-03-26 22:59:47', '14', ''),
-(47, 250, 'text', 'user', 0, '2021-03-26 23:02:00', '14', ''),
-(48, 250, 'audio', 'user', 0, '2021-03-27 09:44:20', '14', ''),
-(53, 250, 'location', 'user', 0, '2021-03-27 11:18:31', '14', ''),
-(54, 250, 'video', 'user', 0, '2021-03-27 11:19:41', '14', ''),
-(56, 250, 'image', 'user', 0, '2021-03-30 20:20:33', '14', ''),
-(57, 250, 'location', 'user', 0, '2021-03-31 21:52:13', '14', ''),
-(58, 139, 'image', 'user', 0, '2021-04-02 10:38:27', '14', ''),
-(59, 250, 'text', 'user', 0, '2021-04-04 10:10:33', '15', '');
+(58, 139, 'image', 'user', 0, '2021-04-02 10:38:27', '14', '');
 
 -- --------------------------------------------------------
 
@@ -1042,16 +964,10 @@ CREATE TABLE `post_comments` (
 --
 
 INSERT INTO `post_comments` (`post_comments_id`, `post_id`, `user_id`, `data`, `type`, `time`) VALUES
-(5, 11, 139, '1501356089.png', 'sticker', '2017-07-30 00:51:29'),
-(8, 32, 250, 'yes , hello , sorry , but you are wrong', 'text', '2021-03-09 14:39:24'),
-(11, 47, 252, 'dbfhajsfbavdshjvbc', 'text', '2021-03-27 12:42:53'),
-(12, 47, 252, 'ahdjvahdjvadhvcbahdvcadbscds x\'', 'text', '2021-03-27 12:42:59'),
-(13, 47, 252, 'hajvndabdvncnadmsvcjm,nasdvcgajs,dhfbncx', 'text', '2021-03-27 12:43:08'),
 (14, 9, 250, 'hi there', 'text', '2021-03-27 23:46:42'),
 (30, 9, 139, 'cnvjnzmxc', 'text', '2021-04-03 13:32:06'),
 (35, 58, 250, 'The reason is not that they are not made as well.The first actual reason is corruption!Government contracts require (unwritten requirement) the contractor to pay 14% of the contract amount as commissions (read bribe) to be able to finish the contract and collect their payments. Since these contacts are awarded by competitive bidding the already tight budget gets further squeezed and the only solution is substandard output.Also, If the job is done to last 10 years the first time over, there will be no further allocation for the subsequent years, and therefore no commissions.Secondly, the roads are not as wide as in the US simply because the density of population in India is far higher than US or Europe. That means there is less free land for use in wider roads. For example, in Kerala, you can\'t figure out where one town or village ends and the next begins, because it\'s all just a continuous string of houses. In such a scenario, it is close to impossible to have wide roads without displacing a large majority of the inhabitants in the effort to provide the exact same inhabitants wider roads!The above is assuming the question is correct in the first place. Not ALL the roads in US are as good, and not all the roads in India are as bad!', 'text', '2021-04-04 09:57:23'),
-(36, 58, 252, 'Some of the reasons mentioned like high rainfall, poor road material quality etc. are highly arguable because these identified problems can be solved through investment in Research & Development and technology to suit the Indian conditions.\n\nNow, where is the investment? - One investment destination is subsidized education. Almost all IITs + other government premium technical institute (all subsidized by the government) have Civil Engineering degrees, what are these students (investments) contributing in return?\n\nSo, these reasons like high rainfall, poor material quality are mere excuses rather than the problem. The real problem is the widespread corruption across government and private sectors (contractors) engaged in public works and maintenance. Unless sincere effort is put forward to tackle corruption and install a transparent system not even American imported quality materials can save Indian roads.\n\nAnd anyways, roads are repaired every 5 years, in view of upcoming elections.', 'text', '2021-04-04 10:00:37'),
-(37, 59, 254, 'Yes, Gender Equality is a myth in India, it’s an even bigger myth than the “achhe din” (better days) folklore currently so rave in the country. Let me tell you why.I attended one of the best colleges in the country. My institution prided itself on its rule of law, and a complex web of regulations at every step. It wasn’t anything short of a reign of terror as even the slightest misdemeanour (in their eyes) could earn you a fabled disciplinary action. Don’t get me wrong, it is a remarkable institution, with extremely erudite and liberal professors and an inspirational student body, but the administration was and still is a a bastion of misogyny and blatant sexism.The lives of women scholars are strictly governed and the administration did not want any bad apples (the liberated, independent woman trope so often vilified) in the hostels, so the principal himself intervened in handpicking “docile” girls who wouldn’t be a problem. Boys on the other hand, you could fail you exams and still retain your hostel. It was repeatedly fed to us in sermon type settings how men and women are different and how the role of a woman should be predominantly nurturing. Imagine that, in the 21st century coming from the people (men, mostly) who represent the very finest of educational attainment. What was further appalling was the sheer number of women who had internalised and normalised this nonsense so as to comply and even play accomplice to the hungry eyes of the watchdogs (ever heard of moral gestapo)!', 'text', '2021-04-04 10:12:29');
+(36, 58, 252, 'Some of the reasons mentioned like high rainfall, poor road material quality etc. are highly arguable because these identified problems can be solved through investment in Research & Development and technology to suit the Indian conditions.\n\nNow, where is the investment? - One investment destination is subsidized education. Almost all IITs + other government premium technical institute (all subsidized by the government) have Civil Engineering degrees, what are these students (investments) contributing in return?\n\nSo, these reasons like high rainfall, poor material quality are mere excuses rather than the problem. The real problem is the widespread corruption across government and private sectors (contractors) engaged in public works and maintenance. Unless sincere effort is put forward to tackle corruption and install a transparent system not even American imported quality materials can save Indian roads.\n\nAnd anyways, roads are repaired every 5 years, in view of upcoming elections.', 'text', '2021-04-04 10:00:37');
 
 -- --------------------------------------------------------
 
@@ -1071,15 +987,6 @@ CREATE TABLE `post_likes` (
 --
 
 INSERT INTO `post_likes` (`post_likes_id`, `post_like_by`, `post_id`, `time`) VALUES
-(12, 139, 10, '2017-07-30 00:51:45'),
-(19, 139, 11, '2017-07-30 01:37:55'),
-(27, 252, 32, '2021-03-25 22:56:59'),
-(28, 250, 32, '2021-03-26 15:09:14'),
-(29, 252, 31, '2021-03-26 22:57:24'),
-(34, 252, 54, '2021-03-27 14:51:45'),
-(44, 250, 39, '2021-03-27 23:41:55'),
-(50, 250, 11, '2021-03-28 14:49:28'),
-(52, 250, 56, '2021-03-30 20:20:42'),
 (59, 139, 9, '2021-04-03 13:32:25');
 
 -- --------------------------------------------------------
@@ -1208,16 +1115,6 @@ CREATE TABLE `shares` (
   `share_time` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `shares`
---
-
-INSERT INTO `shares` (`share_id`, `share_by`, `share_to`, `post_id`, `share_time`) VALUES
-(3, 139, 166, 11, '2017-07-30 00:51:38'),
-(4, 139, 187, 11, '2017-07-30 01:14:45'),
-(5, 139, 227, 11, '2017-07-30 01:38:00'),
-(7, 250, 171, 32, '2021-03-09 14:32:42');
-
 -- --------------------------------------------------------
 
 --
@@ -1231,14 +1128,6 @@ CREATE TABLE `taggings` (
   `taggings_id` int(11) NOT NULL,
   `taggings_time` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `taggings`
---
-
-INSERT INTO `taggings` (`tagging_id`, `post_id`, `taggings`, `taggings_id`, `taggings_time`) VALUES
-(5, 10, 'takkar', 139, '2017-07-30 00:49:38'),
-(6, 11, 'takkar', 139, '2017-07-30 00:50:06');
 
 -- --------------------------------------------------------
 
@@ -1271,17 +1160,6 @@ CREATE TABLE `text_post` (
   `post_id` int(11) NOT NULL,
   `text` longtext COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `text_post`
---
-
-INSERT INTO `text_post` (`text_post_id`, `post_id`, `text`) VALUES
-(3, 10, 'Hello😨😨😨😨😨😨'),
-(5, 16, 'hjhj'),
-(8, 31, 'dfavfhhgnscfsbtg'),
-(14, 47, 'hi , won\'t you work now?'),
-(19, 59, 'We are ranked 140th among 156 countries in case of gender equality . isn\'t it shame on India . Is this The India our ancestors expected and chose death for it. Upto when we will remain uncivilised morons.\n#shameondemocracy\n');
 
 -- --------------------------------------------------------
 
@@ -1321,8 +1199,8 @@ INSERT INTO `users` (`id`, `username`, `firstname`, `surname`, `email`, `passwor
 (141, 'modi', 'narendra', 'modi', 'modi@gmail.com', '$2y$10$Ic0GMBq.hLOciK6whatlxu/1DVwLz3bPw/nS8D24ZdiLQke89qWKi', 'https://www.facebook.com/narendramodi', 'https://www.instagram.com/narendramodi/', 'https://twitter.com/narendramodi', 'https://www.youtube.com/user/narendramodi', 'http://www.narendramodi.in/', '', '🌞🌞🌞🌞', 'public', '2017-03-18 16:38:49', 'yes', '2017-03-18 16:38:49', '1', 'Windows 10', 'Chrome'),
 (142, 'taylor_swift', 'taylor', '__swift', 'taylor@gmail.com', '$2y$10$Ic0GMBq.hLOciK6whatlxu/1DVwLz3bPw/nS8D24ZdiLQke89qWKi', 'https://www.facebook.com/TaylorSwift/', 'https://www.instagram.com/taylorswift/', 'https://twitter.com/taylorswift13', 'https://www.youtube.com/user/TaylorSwiftVEVO', 'https://taylorswift.com/', '', 'singer', 'public', '2017-03-18 17:13:23', 'yes', '2017-03-18 17:13:23', '1', 'Windows 10', 'Chrome'),
 (143, 'selenagomez', 'selena', 'gomez', 'selena@gmail.com', '$2y$10$IktQRVd262bp0Ihv2A06ferDhWAW/R0LhDwKxXWjPb3ycGDRx4ccC', 'https://www.facebook.com/Selena/', 'https://www.instagram.com/selenagomez/', 'https://twitter.com/selenagomez?ref_srctwsrc5Egoogle7Ctwcamp5Eserp7Ctwgr5Eauthor', 'https://www.youtube.com/user/SelenaGomezVEVO', 'https://www.selenagomez.com/', '', 'Get \'It Ain\'t Me\' with Kygo, out now. Enjoy!!😛😛', 'private', '2017-03-21 19:36:54', 'yes', '2017-03-21 19:36:54', '1', 'Windows 10', 'Chrome'),
-(144, 'ghalib', 'mirza', 'ghalib', 'ghalib@gmail.com', '$2y$10$jOJJJTFANBTOtW4b8m.ci.22KLhZClVeEkIhM9DVkLyP3pELFVeku', '', '', '', '', 'https://www.google.co.in/webhp?sourceidchrome-instant&ion1&espv2&ieUTF-8qghalib&#q=ghalib&*', '', 'Urdu Poet.', 'private', '2017-03-21 19:45:50', 'yes', '2017-03-21 19:45:50', '1', 'Windows 10', 'Chrome'),
-(149, 'nobita', 'nobita', 'nobi', 'nobita@gmail.com', '$2y$10$9kM9TpO9kjfTn.R2jnEia.3tz7F38QKiKifyfWDjW5al6aQUOeimu', '', '', '', '', '', '', 'Shh... I\'m sleeping right now.', 'public', '2017-03-21 22:11:22', 'yes', '2017-03-21 22:11:22', '1', 'Windows 10', 'Chrome'),
+(144, 'ghalib', 'mirza', 'ghalib', 'ghalib@gmail.com', '$2y$10$Ic0GMBq.hLOciK6whatlxu/1DVwLz3bPw/nS8D24ZdiLQke89qWKi', '', '', '', '', 'https://www.google.co.in/webhp?sourceidchrome-instant&ion1&espv2&ieUTF-8qghalib&#q=ghalib&*', '', 'Urdu Poet.', 'private', '2017-03-21 19:45:50', 'yes', '2017-03-21 19:45:50', '1', 'Windows 10', 'Chrome'),
+(149, 'nobita', 'nobita', 'nobi', 'nobita@gmail.com', '$2y$10$Ic0GMBq.hLOciK6whatlxu/1DVwLz3bPw/nS8D24ZdiLQke89qWKi', '', '', '', '', '', '', 'Shh... I\'m sleeping right now.', 'public', '2017-03-21 22:11:22', 'yes', '2017-03-21 22:11:22', '1', 'Windows 10', 'Chrome'),
 (153, 'tendulkar', 'sachin', 'tendulkar', 'sachin@gmail.com', '$2y$10$p0pCtnoxrdQFTnx9YsARKO1UxZCnLs/KqxK5NEb.rWRgZGuJwJ4eq', '', '', '', '', '', '', 'LORD OR CRICKET.', 'public', '2017-03-21 22:30:49', 'yes', '2017-03-21 22:30:49', '1', 'Windows 10', 'Chrome'),
 (154, 'voldemort', 'lord', 'voldemort', 'lord@gmail.com', '$2y$10$cSpyMlCfMlCScH9r2/DYmuu42QPO9iDaV3j.vUua.M1ohdBqWhaMG', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'public', '2017-03-21 22:33:57', 'yes', '2017-03-21 22:33:57', '1', 'Windows 10', 'Chrome'),
 (165, 'gian', 'gian', 'takeshi', 'gian@gmail.com', '$2y$10$VLXCFETiLoTiZyRzm9PeluKNA6cKjK78e0OKJKiShCx.8E53CO/nO', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'public', '2017-03-22 15:27:56', 'yes', '2017-03-22 15:27:56', '1', 'Windows 10', 'Chrome'),
@@ -1335,7 +1213,7 @@ INSERT INTO `users` (`id`, `username`, `firstname`, `surname`, `email`, `passwor
 (186, 'harrypotter', 'harry', 'potter', 'harrypotter@gmail.com', '$2y$10$k.SR4rUcw9ABiw6zCgYg3emamtHZa499L5nszPTPAo/cSp55J1.c6', '', '', '', '', '', '', '', 'public', '2017-03-23 01:33:35', 'yes', '2017-03-23 01:33:35', '1', 'Windows 10', 'Chrome'),
 (187, 'harmoine', 'harmoine', 'granger', 'harmoine@gmail.com', '$2y$10$VH4je2DWNHdJTdD6WYI9Aeu9XbdH4BlD8pd2vUQxXT8zB8LyBg1ge', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'public', '2017-03-23 01:38:29', 'yes', '2017-03-23 01:38:29', '1', 'Windows 10', 'Chrome'),
 (188, 'ron', 'ron', 'weasley', 'ron@gmail.com', '$2y$10$hymaVLBlzOaYvORWCKa4QebaLdoFRPQBtu9Y7y5YGxqLYME86DoFW', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'public', '2017-03-23 01:41:25', 'yes', '2017-03-23 01:41:25', '1', 'Windows 10', 'Chrome'),
-(192, 'instagram', 'instagram', 'official', 'instagram@gmail.com', '$2y$10$jR.NwcgfN6n6E4sChguvl.zCVrAzsQMpw5KK5vTVR6LK9FqCkhR1S', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'public', '2017-03-23 17:24:04', 'yes', '2017-03-23 17:24:04', '1', 'Windows 10', 'Chrome'),
+(192, 'Horizon', 'Horizon', 'official', 'instagram@gmail.com', '$2y$10$Ic0GMBq.hLOciK6whatlxu/1DVwLz3bPw/nS8D24ZdiLQke89qWKi', '', '', '', '', '', '', 'address us any query you face', 'public', '2017-03-23 17:24:04', 'yes', '2017-03-23 17:24:04', '1', 'Windows 10', 'Chrome'),
 (194, 'shizuka', 'shizuka', 'minamoto', 'shizuka@gmail.com', '$2y$10$dcsmNtMIOAQFi6a9IjKF7OzbWMCuuUkiIy9uao.MFiJTKvZQ7Gxv6', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'public', '2017-03-27 23:05:09', 'yes', '2017-03-27 23:05:09', '1', 'Windows 10', 'Chrome'),
 (195, 'snape', 'severus', 'snape', 'snape@gmail.com', '$2y$10$yMIgIAf2.WlOYJFw/HstJuU3ItAN2DjNWzi6XtDe0u5GN/YnY68Cu', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'public', '2017-03-27 23:56:53', 'yes', '2017-03-27 23:56:53', '1', 'Windows 10', 'Chrome'),
 (196, 'draco', 'draco', 'malfoy', 'draco@gmail.com', '$2y$10$.qOPiIDPBWXZJGJZ9g6j3O1IwJ8zhAyptZtDasHkPjpOF1yIdvZqG', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'public', '2017-03-27 23:59:04', 'yes', '2017-03-27 23:59:04', '1', 'Windows 10', 'Chrome'),
@@ -1346,7 +1224,7 @@ INSERT INTO `users` (`id`, `username`, `firstname`, `surname`, `email`, `passwor
 (219, 'flipkart', 'flipkart', '??', 'flipkart@gmail.com', '$2y$10$D7C3sBKCE1HmdongzS5.cuw2bUnLI6ZlIz11ZMMUa2EadE5ilCtc.', '', '', '', '', 'https://www.flipkart.com', '', '', 'public', '2017-04-07 22:21:35', 'yes', '2017-04-07 22:21:35', '1', 'Windows 10', 'Chrome'),
 (250, 'Indiana', 'Indiana', 'Jones', 'a@gmail.com', '$2y$10$Ic0GMBq.hLOciK6whatlxu/1DVwLz3bPw/nS8D24ZdiLQke89qWKi', '', '', '', '', '', '', 'The unique scoring system based on live performance of the players will definitely make your heart skip a beat and it will take your experience to a whole new level. With this scoring system even a team with zero cricketing knowledge can beat the cricket pundits on their day.😈', 'public', '2021-03-09 14:28:24', 'no', '2021-03-09 14:28:24', '1', 'Windows 10', 'Chrome'),
 (251, 'abcde', 'kk', 'll', 'avimohite2019@gmail.com', '$2y$10$QEypy6jM.V.xTS5hu7E7h.j.w.BxSWcF.7Mo6W2ZJkc/F47M8yMYW', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'public', '2021-03-09 14:43:29', 'yes', '2021-03-09 14:43:29', '1', 'Windows 10', 'Chrome'),
-(252, 'abcder', 'a', 'b', 'k@gmail.com', '$2y$10$QEypy6jM.V.xTS5hu7E7h.j.w.BxSWcF.7Mo6W2ZJkc/F47M8yMYW', '', 'https://codepen.io/bap13/details/PZRBzy', '', '', '', '', '', 'public', '2021-03-25 22:19:25', 'no', '2021-03-25 22:19:25', '1', 'Windows 10', 'Chrome'),
+(252, 'Mr_atre', 'pralhad', 'atre', 'k@gmail.com', '$2y$10$QEypy6jM.V.xTS5hu7E7h.j.w.BxSWcF.7Mo6W2ZJkc/F47M8yMYW', '', 'https://codepen.io/bap13/details/PZRBzy', '', '', '', '', 'You don\'t need it😜', 'public', '2021-03-25 22:19:25', 'no', '2021-03-25 22:19:25', '1', 'Windows 10', 'Chrome'),
 (253, 'avi', 'a', 'b', 'a@mail.com', '$2y$10$cPkj6mJRIeqNWWkB0Awf7uZqwifCr0BhPgfUtqnYhIHGm0hxJWCAu', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'public', '2021-03-26 12:41:39', 'no', '2021-03-26 12:41:39', '1', 'Windows 10', 'Chrome'),
 (254, 'sherlock', 'sherlock', 'holmes', 'holmes@sherlock.com', '$2y$10$mMkUqlZY4NlDdPx7yQLQJuGoolOJ6YNPbqOd6Em77tU4SCiCklgxS', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'public', '2021-04-04 10:03:02', 'no', '2021-04-04 10:03:02', '1', 'Windows 10', 'Chrome');
 
@@ -1362,13 +1240,6 @@ CREATE TABLE `video_post` (
   `video` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `about` longtext COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `video_post`
---
-
-INSERT INTO `video_post` (`video_post_id`, `post_id`, `video`, `about`) VALUES
-(6, 54, '1616824181.mp4', ' wcwfrvwrfcwefrcrfw');
 
 --
 -- Indexes for dumped tables
@@ -1700,7 +1571,7 @@ ALTER TABLE `loc_post`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `login_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `login_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT for table `message`
@@ -1724,7 +1595,7 @@ ALTER TABLE `notifications`
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT for table `post_comments`
@@ -1766,13 +1637,13 @@ ALTER TABLE `taggings`
 -- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `tag_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `tag_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `text_post`
 --
 ALTER TABLE `text_post`
-  MODIFY `text_post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `text_post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `users`
